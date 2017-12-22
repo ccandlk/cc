@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        h1
+        {
+            background: #203; color: white; transition: 1s;
+        }
+        h1:hover{
+            color: transparent;
+            text-shadow: 0 0 .1em white, 0 0 .3em white;
+        }
+
+        @keyframes bounce {
+            60%,80%, to { transform: translateY(350px); animation-timing-function: ease-out;}
+            70% { transform: translateY(250px); }
+            90% { transform: translateY(300px); }
+        }
+        .ball {
+            /* 尺寸样式、颜色样式等 */ animation: bounce 3s ease-in;
+        }
+        .aa{
+            height:350px;
+            border:1px solid;
+            position:absolute;
+            left:0;top:0;
+            width:400px;
+        }
+
+    </style>
+</head>
+<body>
+<!--<div class="ball">-->
+   <!--<img src="cc.png"/>-->
+<!--</div>-->
+<!--<div class="aa">-->
+    <!--dd-->
+<!--</div>-->
+<script>
+
+        foo(); // 3
+        function foo() { console.log( 1 );
+        }
+        var foo = function() { console.log( 2 );
+        };
+        foo();
+
+</script>
+
+</body>
+</html>

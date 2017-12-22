@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //第一种情况
+    var reg = new RegExp('xyx','g');
+    //等价于
+    var reg='/xyx/g';
+    //第二种情况
+    var reg=new RegExp(/xyx/g);
+    //等价于
+    var reg='/xyx/g';
+    //其中xyx/g分开写会报错，es6改变了这种写法
+    var reg=new RegExp(/xyx/g,'i');
+    console.log(reg);///xyx/i
+    var gi=new RegExp(/xyx/g,'i').flags;
+    console.log(gi);//i
+    console.log(/abc/ig.source);//abc
+    console.log(/abc/ig.flags);//gi
+    //ES6 对正则表达式添加了u修饰符，含义为“Unicode模式”，用来正确处理大于\uFFFF的 Unicode 字符。
+    //量词，使用u修饰符后，所有量词都会正确识别码点大于0xFFFF的 Unicode 字符。
+    console.log(/a{2}/.test('aa'));//true
+    console.log(/a{2}/u.test('aa'));//true
+    console.log(/𠮷{2}/.test('𠮷𠮷'));//false
+    console.log(/𠮷{2}/u.test('𠮷𠮷'));//true
+    //y修饰符，从头开始匹配，如果第一个就不匹配，匹配失败，g修饰符是只要字符串中有匹配的就会匹配成功。
+    const REGEX = /a/y;
+    console.log(REGEX.sticky )// true;
+    // 指定从2号位置开始匹配
+    REGEX.lastIndex = 2;
+    // 不是粘连，匹配失败
+    REGEX.exec('xaya'); // null
+    // 指定从3号位置开始匹配
+    REGEX.lastIndex = 3;
+    // 3号位置是粘连，匹配成功
+    const match = REGEX.exec('xaxa');
+    match.index // 3
+    REGEX.lastIndex // 4
+
+    // 报错
+    function foo(x, x=1, y) {
+        // ...
+    }
+</script>
+</body>
+</html>

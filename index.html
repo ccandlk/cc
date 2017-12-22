@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p:nth-child(odd){
+            color:red
+        }
+    </style>
+</head>
+<body>
+<p>另一个 div 中第一个段落。</p>
+<p>另一个 div 中第一个段落。</p>
+<!--<div style="border:1px solid">-->
+    <!--<span>div span中第一个段落。</span>-->
+    <!--<p>div 中第一个段落。</p>-->
+    <!--<p>div 中的最后一个段落。</p>-->
+<!--</div><br>-->
+
+<!--<div style="border:1px solid">-->
+    <!--<p>另一个 div 中第一个段落。</p>-->
+    <!--<p>另一个 div 中的最后一个段落。</p>-->
+
+<!--</div>-->
+<!--<input type="text" list="greetings"/>-->
+<!--<datalist id="greetings">-->
+    <!--<option>chx</option>-->
+    <!--<option>lk</option>-->
+<!--</datalist>-->
+<!--<input type="date"/>-->
+<!--<input type="time"/>-->
+<!--<input type="number"/>-->
+<!--<input type="range" min="1" max="10" step="2" value="5"/>-->
+<!--<input type="search"/>-->
+<!--<input type="color"/>-->
+<iframe src="test.html" name="frame"></iframe>
+<script>
+//    var a='undefined';
+//    var b='false';
+//    var d=null;
+//    var c='';
+//    function testVar(varP){
+//        if(varP){
+//            console.log(varP);
+//            return true;
+//        }
+//        else return false;
+//    }
+//    testVar(a);//true
+//    testVar(b);//true
+//    testVar(c);//false
+//    testVar(d);//false
+
+
+var a = {
+    user:"追梦子",
+    fn:function(b,c){
+        console.log(this.user);
+    }
+}
+var b = a.fn;
+var c=b.bind(a);
+c();
+
+
+
+</script>
+</body>
+</html>
